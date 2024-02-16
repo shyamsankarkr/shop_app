@@ -22,6 +22,16 @@ class MyApp extends StatelessWidget {
             fontSize: 16,
           ),
         ),
+        textTheme: const TextTheme(
+          titleMedium: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+          bodySmall: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        ),
       ),
       title: "Shop App",
       home: const HomePage(),
