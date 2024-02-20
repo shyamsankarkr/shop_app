@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/cart_provider.dart';
+import 'package:shop_app/providers/cart_provider.dart';
 
-import 'package:shop_app/home_page.dart';
+import 'package:shop_app/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => CartProvider(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
             fontFamily: 'Lato',
             colorScheme: ColorScheme.fromSeed(

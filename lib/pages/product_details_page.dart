@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/cart_provider.dart';
+import 'package:shop_app/providers/cart_provider.dart';
 
 class ProductDetailsPage extends StatefulWidget {
   final Map<String, Object> product;
@@ -32,7 +32,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             ),
           ),
           const Spacer(),
-          Image.asset(widget.product['imageUrl'] as String),
+          Image.asset(
+            widget.product['imageUrl'] as String,
+            height: 250,
+          ),
           const Spacer(
             flex: 2,
           ),
@@ -65,7 +68,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                           child: GestureDetector(
                             onTap: () {
                               setState(() {
-                                print('hai');
                                 selectedSize = size;
                               });
                             },
@@ -110,7 +112,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).colorScheme.primary,
-                      minimumSize: const Size(double.infinity, 50),
+                      fixedSize: const Size(350, 50),
                     ),
                     child: const Text(
                       "Add to Cart",
